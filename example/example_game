@@ -1,0 +1,44 @@
+Current board:
+ 1 | 2 | 3
+---+---+---
+ 4 | 5 | 6
+---+---+---
+ 7 | 8 | 9
+Player X's turn(1-9): 1
+Current board:
+ X | 2 | 3
+---+---+---
+ 4 | 5 | 6
+---+---+---
+ 7 | 8 | 9
+Player O's turn(1-9): 2
+Current board:
+ X | O | 3
+---+---+---
+ 4 | 5 | 6
+---+---+---
+ 7 | 8 | 9
+Player X's turn(1-9): 5
+Current board:
+ X | O | 3
+---+---+---
+ 4 | X | 6
+---+---+---
+ 7 | 8 | 9
+Player O's turn(1-9): 5
+Input invalid. Please re-enter a number:
+Player O's turn(1-9): 6
+Current board:
+ X | O | 3
+---+---+---
+ 4 | X | O
+---+---+---
+ 7 | 8 | 9
+Player X's turn(1-9): 9
+Current board:
+ X | O | 3
+---+---+---
+ 4 | X | O
+---+---+---
+ 7 | 8 | X
+Player X wins!
