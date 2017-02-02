@@ -1,3 +1,4 @@
+#
 class Game
   def initialize(board, player_x, player_o)
     @board = board
@@ -16,7 +17,7 @@ class Game
   private
 
   def display_board_information
-    puts "Current board:"
+    puts 'Current board:'
     puts @board.print_board
   end
 
@@ -28,7 +29,7 @@ class Game
         draw(player, position.to_i)
         break
       else
-        puts "Input invalid. Please re-enter a number:"
+        puts 'Input invalid. Please re-enter a number:'
       end
     end
 
@@ -43,16 +44,14 @@ class Game
   end
 
   def check_player_wins(player)
-    if @board.has_same_marker_in_row?
-      puts "Player #{player.marker} wins!"
-      exit 0
-    end
+    return unless @board.same_marker_in_row?
+    puts "Player #{player.marker} wins!"
+    exit 0
   end
 
   def check_remaining_positions
-    if @board.all_positions_filled?
-      puts "This is a draw game. Game over!"
-      exit 0
-    end
+    return unless @board.all_positions_filled?
+    puts 'This is a draw game. Game over!'
+    exit 0
   end
 end

@@ -1,4 +1,4 @@
 module Marker
-  MARKER_X = 'X'
-  MARKER_O = 'O'
+  MARKER_X = 'X'.freeze
+  MARKER_O = 'O'.freeze
 end

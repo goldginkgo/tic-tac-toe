@@ -1,8 +1,9 @@
 require_relative 'marker'
 
+#
 class Board
   POSSIBLE_LINES = [[0, 1, 2], [3, 4, 5], [6, 7, 8], [0, 3, 6],
-                    [1, 4, 7], [2, 5, 8], [0, 4, 8], [2, 4, 6]]
+                    [1, 4, 7], [2, 5, 8], [0, 4, 8], [2, 4, 6]].freeze
 
   def initialize
     @positions = %w(1 2 3 4 5 6 7 8 9)
@@ -13,14 +14,14 @@ class Board
   end
 
   def print_board
-    " #{@positions[0]} | #{@positions[1]} | #{@positions[2]} \n" +
-    "---+---+---\n" +
-    " #{@positions[3]} | #{@positions[4]} | #{@positions[5]} \n" +
-    "---+---+---\n" +
+    " #{@positions[0]} | #{@positions[1]} | #{@positions[2]} \n" \
+    "---+---+---\n" \
+    " #{@positions[3]} | #{@positions[4]} | #{@positions[5]} \n" \
+    "---+---+---\n" \
     " #{@positions[6]} | #{@positions[7]} | #{@positions[8]} \n"
   end
 
-  def has_same_marker_in_row?
+  def same_marker_in_row?
     POSSIBLE_LINES.each do |line_numbers|
       next if @positions[line_numbers[0]] != @positions[line_numbers[1]]
       next if @positions[line_numbers[0]] != @positions[line_numbers[2]]
