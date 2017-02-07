@@ -28,14 +28,24 @@ class Game
   private
 
   def inquire_player_input
-    puts "Player #{current_player.marker}: Enter a number between 1 and 9 to " \
-         'make your move'
-    gets.strip.to_i
-    # TODO : incorrect input
+    print "Player #{current_player.marker}'s turn (1-9): "
+    loop do
+      position_str = gets.strip
+      return position_str.to_i if position_valid?(position_str)
+      print 'Input invalid. Please re-enter a number: '
+    end
+  end
+
+  def position_valid?(position_str)
+    return false unless position_str.to_i.to_s == position_str
+    position = position_str.to_i
+    return false if position < 1 || position > 9
+    return false unless (1..9).cover?(board.get_cell(position).marker)
+    true
   end
 
   def game_over_message
-    return "#{current_player.marker} won!" if board.game_over == :winner
+    return "Player #{current_player.marker} won!" if board.game_over == :winner
     'The game ended in a draw.' if board.game_over == :draw
   end
 

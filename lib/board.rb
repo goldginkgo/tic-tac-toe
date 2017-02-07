@@ -15,7 +15,6 @@ class Board
   end
 
   def get_cell(human_move)
-    # TODO : judge if cell is already taken
     grid[(human_move - 1) / 3][(human_move - 1) % 3]
   end
 
@@ -73,6 +72,6 @@ class Board
   end
 
   def all_marked?(array)
-    !array.any? { |marker| !%w(X O).include?(marker) }
+    !array.any? { |marker| (1..9).cover?(marker) }
   end
 end
